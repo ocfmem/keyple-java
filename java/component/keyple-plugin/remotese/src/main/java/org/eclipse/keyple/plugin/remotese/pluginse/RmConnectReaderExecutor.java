@@ -81,7 +81,7 @@ class RmConnectReaderExecutor implements RemoteMethodExecutor {
 
         } catch (KeypleReaderException e) {
             // virtual reader for remote reader already exists
-            logger.warn("Virtual reader already exists for reader " + nativeReaderName, e);
+            logger.debug("Virtual reader already exists for reader {}", nativeReaderName);
 
             // send the exception inside the dto
             return transportDto.nextTransportDTO(KeypleDtoHelper.ExceptionDTO(keypleDto.getAction(),
